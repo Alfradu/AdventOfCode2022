@@ -1,0 +1,23 @@
+{
+  "name": "aoc2022",
+  "version": "1.0.0",
+  "description": "aoc2022",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.js",
+    "download input": "download.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alfradu/AdventOfCode2022.git"
+  },
+  "keywords": [
+    "aoc2022"
+  ],
+  "author": "Alfred Radu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alfradu/AdventOfCode2022/issues"
+  },
+  "homepage": "https://github.com/Alfradu/AdventOfCode2022#readme"
+}
