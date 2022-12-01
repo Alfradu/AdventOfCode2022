@@ -4,8 +4,11 @@
   "description": "aoc2022",
   "main": "index.js",
   "scripts": {
-    "test": "test.js",
-    "download input": "download.js"
+    "today": "node index.js 0 false",
+    "today-test": "node index.js 0 true",
+    "day": "node index.js",
+    "day-test": "node index.js",
+    "getInput": "node api.js"
   },
   "repository": {
     "type": "git",
@@ -19,5 +22,9 @@
   "bugs": {
     "url": "https://github.com/Alfradu/AdventOfCode2022/issues"
   },
-  "homepage": "https://github.com/Alfradu/AdventOfCode2022#readme"
+  "homepage": "https://github.com/Alfradu/AdventOfCode2022#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "node-fetch": "^3.3.0"
+  }
 }
