@@ -1,13 +1,13 @@
 const parseInput = (input) => input;
 
 const part1 = (input) => {
-    const input = parseInput(input);
+    const data = parseInput(input);
     throw {name : "NotImplementedError", message : "not implemented yet"}; 
     return
 }
 
 const part2 = (input) => {
-    const input = parseInput(input);
+    const data = parseInput(input);
     throw {name : "NotImplementedError", message : "not implemented yet"}; 
     return
 }

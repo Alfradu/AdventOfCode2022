@@ -5,7 +5,7 @@ const dayFiles = fs.readdirSync('./days').filter(file => file.endsWith('.js')).s
 
 const providedArgs = process.argv.slice(2);
 var runDay = parseInt(providedArgs[0]) || dayFiles.length;
-var runTest = Boolean(providedArgs[1]) || false;
+var runTest = providedArgs[1]==='true' || false;
 for (const file of dayFiles) {
     if (file != dayFiles[runDay-1]) continue;
     const day = require(`./days/${file}`);
