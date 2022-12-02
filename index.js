@@ -4,8 +4,18 @@ const fs = require('fs');
 const dayFiles = fs.readdirSync('./days').filter(file => file.endsWith('.js')).sort((a, b) => parseInt(a.substring(3).split('.')[0]) > parseInt(b.substring(3).split('.')[0]) ? 1 : -1);
 
 const providedArgs = process.argv.slice(2);
-var runDay = parseInt(providedArgs[0]) || dayFiles.length;
-var runTest = providedArgs[1]==='true' || false;
+var runDay = dayFiles.length;
+var runTest = false;
+
+for (let i = 0; i < providedArgs.length; i++) {
+    if (providedArgs[i] == "-day" && providedArgs[i+1]) runDay = parseInt(providedArgs[i+1]);
+    if (providedArgs[i] == "-day" && !providedArgs[i+1]) {
+        console.log("-day argument needs a number")
+        process.exit(0);
+    }
+    if (providedArgs[i] == "-test") runTest = true;
+}
+
 for (const file of dayFiles) {
     if (file != dayFiles[runDay-1]) continue;
     const day = require(`./days/${file}`);

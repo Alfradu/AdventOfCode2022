@@ -1,4 +1,4 @@
-const { writeFileSync, existsSync } = require('fs');
+const { writeFileSync, existsSync, copyFileSync } = require('fs');
 const { config } = require('dotenv');
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
@@ -27,4 +27,8 @@ fetch(url, {
     writeFileSync(path_input, body.replace(/\n$/, ""))
 }).catch((err) => {
     console.error(err);
+})
+
+copyFileSync('./template.js', `./days/day${day}.js`, (err) => {
+    if (err) throw err;
 })
