@@ -29,6 +29,4 @@ fetch(url, {
     console.error(err);
 })
 
-copyFileSync('./template.js', `./days/day${day}.js`, (err) => {
-    if (err) throw err;
-})
+copyFileSync('./template.js', `./days/day${day}.js`);
