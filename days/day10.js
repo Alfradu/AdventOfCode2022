@@ -48,13 +48,11 @@ const part2 = (input) => {
         }
     }
 
-    display = display.substring(0, w) + '\n' + display.substring(w);
-    display = display.substring(0, w*2+1) + '\n' + display.substring(w*2+1);
-    display = display.substring(0, w*3+2) + '\n' + display.substring(w*3+2);
-    display = display.substring(0, w*4+3) + '\n' + display.substring(w*4+3);
-    display = display.substring(0, w*5+4) + '\n' + display.substring(w*5+4);
+    for (let row = 1; row < h; row++) {
+        display = display.substring(0, w * row + (row - 1)) + '\n' + display.substring(w * row + (row - 1));
+    }
     console.log(display);
-    return 0
+    return display;
 }
 
 module.exports = {
@@ -369,7 +367,12 @@ addx -11
 noop
 noop
 noop`,
-                expected: 0
+                expected: `###..####.####.####.#..#.###..####..##..
+#..#.#.......#.#....#.#..#..#.#....#..#.
+#..#.###....#..###..##...###..###..#..#.
+###..#.....#...#....#.#..#..#.#....####.
+#.#..#....#....#....#.#..#..#.#....#..#.
+#..#.#....####.####.#..#.###..#....#..#.`
             }
         ],
         solution: part2,
